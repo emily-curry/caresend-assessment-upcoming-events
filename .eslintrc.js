@@ -73,7 +73,6 @@ module.exports = {
         alias: {
           map: [
             ['@', './src'],
-            ['@e2e', './tests/e2e'],
           ],
           extensions: ['.ts'],
         },

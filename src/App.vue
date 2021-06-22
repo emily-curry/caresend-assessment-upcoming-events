@@ -1,20 +1,17 @@
 <template>
   <div class="App">
     <NavBar />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
 
-import HelloWorld from '@/components/HelloWorld.vue';
 import NavBar from '@/components/NavBar.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld,
     NavBar,
   },
 });
