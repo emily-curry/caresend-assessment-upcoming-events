@@ -40,7 +40,7 @@ To implement the event conflict feature, you will need to design an algorithm to
 
 - Sort all events chronologically
 - Design and implement an algorithm to determine event conflicts 
-- Determining event conflicts in the entire data set must perform better than *O(n<sup>2</sup>)*
+- Determining event conflicts in the entire data set must perform better or equivalent to *O(n<sup>2</sup>)*
 - Clear separation of concerns, good software architecture
 - Comments with a brief description of the algorithm
 
