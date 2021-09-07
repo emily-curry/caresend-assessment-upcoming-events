@@ -39,7 +39,8 @@ In this project, SASS and Buefy are configured for your convenience, but you may
 To implement the event conflict feature, you will need to design an algorithm to find events that overlap with each other. Note that an event ending at the same time another event starts should not be considered a conflict.
 
 - Sort all events chronologically
-- Design and implement an algorithm to determine event conflicts (must perform better than *O(n<sup>2</sup>)*)
+- Design and implement an algorithm to determine event conflicts 
+- Determining event conflicts in the entire data set must perform better than *O(n<sup>2</sup>)*
 - Clear separation of concerns, good software architecture
 - Comments with a brief description of the algorithm
 
