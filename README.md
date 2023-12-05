@@ -1,16 +1,18 @@
 ![CareSend](https://gitlab.com/pumposh/caresend-assessment-upcoming-events/-/raw/master/src/assets/logos/CareSend%20Horizontal.png)
+
 # Upcoming Events
 
 #### Introduction
+
 Your assignment is to build a prototype of a Vue.js web app called “Upcoming Events”. The app must display a list of events, sectioned by start date, and listed in chronological order. The app must also correctly identify conflicts between events.
 
 #### Getting Started
 
-Fork or clone this repository and run the following commands to initialize your development environment: 
+Fork or clone this repository and run the following commands to initialize your development environment:
 
 ```bash
-$ yarn
-$ yarn serve
+yarn
+yarn serve
 ```
 
 Within this repo in the directory `/src/assets/data/` is a JSON file titled `mock.json`. This file contains the input for this assignment: an array of `Event` objects that match the following schema:
@@ -39,11 +41,10 @@ In this project, SASS and Buefy are configured for your convenience, but you may
 To implement the event conflict feature, you will need to design an algorithm to find events that overlap with each other. Note that an event ending at the same time another event starts should not be considered a conflict.
 
 - Sort all events chronologically
-- Design and implement an algorithm to determine event conflicts 
+- Design and implement an algorithm to determine event conflicts
 - Determining event conflicts in the entire data set must perform better than *O(n<sup>2</sup>)*
 - Clear separation of concerns, good software architecture
 - Comments with a brief description of the algorithm
-
 
 #### Analytical Requirements
 
@@ -54,11 +55,12 @@ Edit this `README.md` in your forked repository and at the bottom of the documen
 - Trade-offs or assumptions you made in your design
 - Run time complexity analysis
 
-
 #### Submission
+
 To submit your work, deploy your project to GitHub/GitLab and make sure to have your analysis within the `README.md` file. Provide a link to the working application (Heroku, Google Cloud, AWS or any other web hosting should work)
 
 #### Tips & FAQs
+
 - Don’t worry too much about UI design. You can use any bootstrap framework of your choice and keep it simple
 - You can use any external libraries and dependencies as long as you can clearly explain how they work
 - You can assume that events occur in your local timezone (i.e., you may ignore time zones for this assignment)
@@ -69,3 +71,8 @@ To submit your work, deploy your project to GitHub/GitLab and make sure to have 
 Full Name: *Type here*
 
 *Write your analysis here*
+
+#### Dependency changes
+
+- `prettier` + `eslint-plugin-prettier`: Lint warnings for code style issues are noise, they are a category of issue that can be fully offloaded to a tool and I rather not think about them at all. `prettier` allows me 100% consistent formatting on save, `eslint-plugin-prettier` disables all lint rules that will be fixed by prettier on save so that I'm not seeing those lint warnings while I work.
+- `vue` updates + `node-gyp`: Just to allow building with node >= v18.
