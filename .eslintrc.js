@@ -18,33 +18,12 @@ module.exports = {
   plugins: ["import-alias"],
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
-    "arrow-body-style": ["error", "as-needed"],
     "consistent-return": "off",
     "default-case": "off",
     "func-names": ["error", "as-needed"],
     "function-paren-newline": "off",
     "implicit-arrow-linebreak": "off",
-    "import-alias/import-alias": [
-      "error",
-      {
-        aliases: [{ alias: "@", matcher: "^src" }],
-      },
-    ],
     "import/prefer-default-export": "off",
-    "import/order": [
-      "error",
-      {
-        alphabetize: {
-          order: "asc",
-          caseInsensitive: true,
-        },
-        groups: [
-          ["builtin", "external"],
-          ["internal", "parent", "sibling", "index", "object", "unknown"],
-        ],
-        "newlines-between": "always",
-      },
-    ],
     "max-len": "off",
     "no-confusing-arrow": "off",
     "object-curly-newline": 0,

@@ -76,3 +76,4 @@ Full Name: *Type here*
 
 - `prettier` + `eslint-plugin-prettier`: Lint warnings for code style issues are noise, they are a category of issue that can be fully offloaded to a tool and I rather not think about them at all. `prettier` allows me 100% consistent formatting on save, `eslint-plugin-prettier` disables all lint rules that will be fixed by prettier on save so that I'm not seeing those lint warnings while I work.
 - `vue` updates + `node-gyp`: Just to allow building with node >= v18.
+- `zod`: I/O at the boundaries of the application should be validated at runtime to assert our data matches our type declarations. `zod` is a pretty great schema validation library.
