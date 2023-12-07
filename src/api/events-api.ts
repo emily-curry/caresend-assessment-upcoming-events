@@ -1,4 +1,4 @@
-import type { Event } from "@/models/event";
+import type { CalendarEvent } from "@/models/event";
 import z from "zod";
 
 const eventSchema = z.object({
@@ -10,12 +10,12 @@ const eventSchema = z.object({
 const eventsListSchema = z.array(eventSchema);
 
 export class EventsApi {
-  public readonly fetchEventsList = async (): Promise<Event[]> => {
+  public readonly fetchEventsList = async (): Promise<CalendarEvent[]> => {
     const response = await fetch("/mock.json");
     const body = await response.json();
     const parsed = eventsListSchema.parse(body);
     return parsed.map((p) => {
-      const result: Event = {
+      const result: CalendarEvent = {
         id: window.crypto.randomUUID(),
         title: p.title,
         start: p.start.getTime(),

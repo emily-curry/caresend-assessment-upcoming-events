@@ -1,4 +1,4 @@
-export interface Event {
+export interface CalendarEvent {
   /** A unique identifier representing the event. */
   id: string;
   /** The display name of the event. */

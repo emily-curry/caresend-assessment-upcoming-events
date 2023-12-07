@@ -68,12 +68,43 @@ To submit your work, deploy your project to GitHub/GitLab and make sure to have 
 
 ### Project Analysis
 
-Full Name: *Type here*
-
-*Write your analysis here*
+Full Name: Emily Curry
 
 #### Dependency changes
 
 - `prettier` + `eslint-plugin-prettier`: Lint warnings for code style issues are noise, they are a category of issue that can be fully offloaded to a tool and I rather not think about them at all. `prettier` allows me 100% consistent formatting on save, `eslint-plugin-prettier` disables all lint rules that will be fixed by prettier on save so that I'm not seeing those lint warnings while I work.
 - `vue` updates + `node-gyp`: Just to allow building with node >= v18.
 - `zod`: I/O at the boundaries of the application should be validated at runtime to assert our data matches our type declarations. `zod` is a pretty great schema validation library.
+
+#### Conflict detection
+
+The strategy for detecting conflicts is as follows:
+
+- Create an array containing one `start` and one `end` object for each event.
+- Sort this array in ascending order. If times are the same, take the `end` events first.
+- As we iterate through the array, we'll keep track of the currently `open` time range. For each element in this array:
+  - If it's a `start` type:
+    - If we have no `open` range, make this element the `open` range.
+    - If we do have an `open` range, then a conflict has been detected. Add both the `open` range and the current element to the result set, then set the `open` range to whichever range ends later.
+  - If it's an `end` type:
+    - If we have an `open` range and it matches the current element, clear the `open` range.
+    - Otherwise, do nothing.
+
+The actual start/end event list happens in linear time, the bottleneck in time complexity comes from the sort operation (which is dependent on the implementation of the JS engine).
+
+Note that this does not tell you *which* events conflict with which. I can't think of a way to do that that's not O(n^2) in the worst case (every event conflicts with every other event), though that solution could be described as O(n*k) where n is the input size and k is the number of conflicts in the set. That might look something like:
+
+```ts
+const result = new Map<string, Set<string>>();
+// assuming events is sorted by start time asc
+for (const i = 0; i < events.length - 1; i++) {
+  const a = events[i];
+  for (const k = i + 1; k < events.length; k++) {
+    const b = events[k];
+    if (b.start >= a.end) break;
+    if (!result.has(a.id)) result.set(a.id, new Set());
+    if (!result.has(b.id)) result.set(b.id, new Set());
+    result.get(a.id)!.add(b.id);
+    result.get(b.id)!.add(a.id);
+  }
+}

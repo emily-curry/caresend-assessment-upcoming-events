@@ -4569,13 +4569,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.6.5":
-  version: 3.15.0
-  resolution: "core-js@npm:3.15.0"
-  checksum: 22edc9cc06470a04f7bc618f42fb14626b5e9e72766b703ab8541e784a4d2c2496eb0b8207017e8925b3bcadbb1469fcaa52940159165b4273f0ca846435da81
-  languageName: node
-  linkType: hard
-
 "core-js@npm:^3.8.3":
   version: 3.33.3
   resolution: "core-js@npm:3.33.3"
@@ -11537,7 +11530,6 @@ __metadata:
     "@vue/eslint-config-typescript": "npm:^11.0.0"
     babel-eslint: "npm:^10.1.0"
     buefy: "npm:^0.9.8"
-    core-js: "npm:^3.6.5"
     cypress: "npm:^9.7.0"
     eslint: "npm:^8.0.0"
     eslint-config-prettier: "npm:^9.1.0"
