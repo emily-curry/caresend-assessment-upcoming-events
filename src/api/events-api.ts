@@ -11,7 +11,7 @@ const eventsListSchema = z.array(eventSchema);
 
 export class EventsApi {
   public readonly fetchEventsList = async (): Promise<CalendarEvent[]> => {
-    const response = await fetch("/mock.json");
+    const response = await fetch("./mock.json");
     const body = await response.json();
     const parsed = eventsListSchema.parse(body);
     return parsed.map((p) => {
