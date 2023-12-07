@@ -68,7 +68,8 @@ To submit your work, deploy your project to GitHub/GitLab and make sure to have 
 
 ### Project Analysis
 
-Full Name: Emily Curry
+Full Name: Emily Curry  
+Site: [Link (Github Pages)](https://emily-curry.github.io/caresend-assessment-upcoming-events)
 
 #### Dependency changes
 
